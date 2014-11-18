@@ -1,0 +1,6 @@
+{
+  "name": "app-bootstrap",
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
