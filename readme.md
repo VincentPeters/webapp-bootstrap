@@ -2,17 +2,6 @@
 
 ## prerequisites
 
-
-### Ruby
-
-[Downloade here]( https://www.ruby-lang.org/en/downloads/ )
-
-### Sass
-
-```sh
-$ gem install sass
-```
-
 ### Node
 
 [Downloade here]( http://nodejs.org/ )
