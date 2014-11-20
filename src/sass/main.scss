@@ -5,15 +5,18 @@
  *
  */
 
-
-// Sass utilities
+// utilities
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/helpers";
  
 // Vendors and external stylesheets
-//@import "vendors/bootstrap";
+@import 'vendors/bourbon/bourbon';
+// Custom grid system
+@import 'settings/grid-settings';
+@import 'settings/animate';
+@import 'vendors/neat/neat';
  
 // Base stuff
 @import "base/reset";

@@ -1,0 +1,28 @@
+@import '../vendors/neat/neat-helpers'; // or '../neat/neat-helpers' when not in Rails
+
+// Change the grid settings
+$grid-columns: 12;
+$max-width: 114em;
+$gutter: 1.2em;
+
+// Neat Breakpoints
+$mobile-portrait-width: 320px;
+$mobile-landscape-width: 480px;
+$tablet-small-width: 640px;
+$tablet-width: 768px;
+$desktop-small-width: 960px;
+$desktop-large-width: 1140px;
+
+$mobile-sm-screen: new-breakpoint(min-width $mobile-portrait-width 12);
+$mobile-lg-screen: new-breakpoint(min-width $mobile-landscape-width 12);
+$tablet-small: new-breakpoint(min-width $tablet-small-width 12);
+$tablet-screen: new-breakpoint(min-width $tablet-width 12);
+$desktop-sm-screen: new-breakpoint(min-width $desktop-small-width 12);
+$desktop-lg-screen: new-breakpoint(min-width $desktop-large-width 12);
+
+
+//DEBUG
+$visual-grid: false;
+$visual-grid-color: red;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.5;
