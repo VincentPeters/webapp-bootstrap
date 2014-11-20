@@ -2,6 +2,17 @@
 
 ## prerequisites
 
+
+### Ruby
+
+[Downloade here]( https://www.ruby-lang.org/en/downloads/ )
+
+### Sass
+
+```sh
+$ gem install sass
+```
+
 ### Node
 
 [Downloade here]( http://nodejs.org/ )
@@ -26,19 +37,25 @@ Step 1: install Front-end libraries
 $ bower install
 ```
 
-Step 2: generate initial compiled files
+Step 2: Install toolchain
+
+```sh
+$ npm install
+```
+
+Step 3: generate initial compiled files
 
 ```sh
 $ gulp
 ```
 
-Step 3: Start watching for file changes
+Step 4: Start watching for file changes
 
 ```sh
 $ gulp watch
 ```
 
-Step 4: Stop reading, start building.
+Step 5: Stop reading, start building.
 
 ## Tools
 

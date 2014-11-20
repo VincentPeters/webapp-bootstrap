@@ -18,6 +18,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     sourcemaps = require('gulp-sourcemaps'),
     minifyHTML = require('gulp-minify-html'),
+    neat = require('node-neat').includePaths,
     del = require('del');
 
 /**
@@ -32,7 +33,13 @@ gulp.task('styles', function () {
     return gulp.src('src/sass/main.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sass({sourcemap: true}))
+        //.pipe(sass({sourcemap: true}))
+        .pipe(sass({
+            // includePaths: require('node-bourbon').with('other/path', 'another/path')
+            // - or -
+            sourcemap: true,
+            includePaths: ['styles'].concat(neat)
+        }))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -118,8 +125,8 @@ gulp.task('clean', function (cb) {
  * 4 . On new generated file, do live reload of browser
  */
 gulp.task('watch', function () {
-    gulp.watch('src/scripts/**/*.js', ['scripts']);
-    gulp.watch('src/styles/**/*.scss', ['styles']);
+    gulp.watch('src/javascript/**/*.js', ['scripts']);
+    gulp.watch('src/sass/**/*.scss', ['styles']);
     gulp.watch('src/documents/**/*.html', ['minify-html']);
     gulp.watch('src/images/**/*', ['images']);
     livereload.listen();

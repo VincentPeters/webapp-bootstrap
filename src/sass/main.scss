@@ -5,19 +5,17 @@
  *
  */
 
+
 // utilities
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/helpers";
- 
+
 // Vendors and external stylesheets
-@import 'vendors/bourbon/bourbon';
-// Custom grid system
-@import 'settings/grid-settings';
-@import 'settings/animate';
-@import 'vendors/neat/neat';
- 
+@import "bourbon";
+@import "neat";
+
 // Base stuff
 @import "base/reset";
 @import "base/typography";
