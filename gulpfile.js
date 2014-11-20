@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     sourcemaps = require('gulp-sourcemaps'),
+    minifyHTML = require('gulp-minify-html'),
     del = require('del');
 
 /**
@@ -42,6 +43,20 @@ gulp.task('styles', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('dist/assets/stylesheets'))
         .pipe(notify({message: 'Styles task complete', sound: false}));
+
+});
+
+/**
+ * Tasks for Html compression
+ * ----------------------------------------------------------------
+ * 1 . minify and save in root folder
+ */
+gulp.task('minify-html', function() {
+    var opts = {comments:false,spare:true};
+    gulp.src('src/documents/**/*.html')
+        .pipe(minifyHTML(opts))
+        .pipe(gulp.dest('./dist/'))
+        .pipe(notify({message: 'Html task complete', sound: false}));
 
 });
 
@@ -105,6 +120,7 @@ gulp.task('clean', function (cb) {
 gulp.task('watch', function () {
     gulp.watch('src/scripts/**/*.js', ['scripts']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
+    gulp.watch('src/documents/**/*.html', ['minify-html']);
     gulp.watch('src/images/**/*', ['images']);
     //livereload.listen();
     //gulp.watch(['dist/**']).on('change', livereload.changed);
@@ -116,5 +132,5 @@ gulp.task('watch', function () {
  * ----------------------------------------------------------------
  */
 gulp.task('default',  function () {
-    gulp.start('styles', 'scripts', 'images');
+    gulp.start('styles', 'scripts', 'minify-html', 'images');
 });
