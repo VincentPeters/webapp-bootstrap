@@ -54,6 +54,13 @@ Automation of front-end toolchain.
 * Jshint javascript and minimize
 * Optimize images
 * Minimize html files
+* Livereload page
+
+#### Livereload
+
+CSS edits and image changes apply live. CoffeeScript, SASS, LESS and others just work.
+
+[Chrome plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
 
 ### Bower
 

@@ -122,9 +122,8 @@ gulp.task('watch', function () {
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/documents/**/*.html', ['minify-html']);
     gulp.watch('src/images/**/*', ['images']);
-    //livereload.listen();
-    //gulp.watch(['dist/**']).on('change', livereload.changed);
-    //gulp.watch(['dist/app/views/**']).on('change', livereload.changed);
+    livereload.listen();
+    gulp.watch(['dist/**']).on('change', livereload.changed);
 });
 
 /**
